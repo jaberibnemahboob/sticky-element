@@ -11,19 +11,23 @@ To use Sticky Element simply add 'stickyelement.min.js' script from distribution
 To stick a menu bar at the top of the window position, follow the code below. Visit to check online [here](https://jaberibnemahboob.github.io/sticky-element/example1.html).
 ```
 let topMenuBar = new StickyElement({
-  element: ".stickynav", /* selector name of the html element, that you want to stick */
-  stickTo: 0, /* top offset of the position */
-  scrollTowards: "none" /* in which scroll event will trigger to stick the element. Possible 3 values are - 'down', 'up' and 'none' */
+  element: ".stickynav",
+  stickTo: 0,
+  scrollTowards: "none"
 });
 ```
+> 'element' is the selector name of the html element
+> 'stickTo' is the top offset of the position
+> 'scrollTowards' which scroll movement will trgger to stick the element. Values can one of these three "none", "down" and "up"
+
 
 ## Example 2
 If a menu bar normally has a static position with having an offset from top of the window, and you want to stick it to the top while scrolling down. Then follow the code below. Visit to check online [here](https://jaberibnemahboob.github.io/sticky-element/example2.html). 
 ```
 let topMenuBar = new StickyElement({
-  element: ".stickynav", /* selector name of the html element, that you want to stick */
-  stickTo: 0, /* top offset of the position */
-  scrollTowards: "down" /* in which scroll event will trigger to stick the element. Possible 3 values are - 'down', 'up' and 'none' */
+  element: ".stickynav",
+  stickTo: 0,
+  scrollTowards: "down"
 });
 ```
 
