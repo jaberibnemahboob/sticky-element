@@ -13,7 +13,7 @@ To stick a menu bar at the top of the window position, follow the code below. Vi
 let topMenuBar = new StickyElement({
   element: ".stickynav", /* selector name of the html element, that you want to stick */
   stickTo: 0, /* top offset of the position */
-  scrollTowards: "none" /* in which scroll evernt will trigger to stick the element. Possible 3 values are - 'down', 'up' and 'none' */
+  scrollTowards: "none" /* in which scroll event will trigger to stick the element. Possible 3 values are - 'down', 'up' and 'none' */
 });
 ```
 
@@ -23,7 +23,7 @@ If a menu bar normally has a static position with having an offset from top of t
 let topMenuBar = new StickyElement({
   element: ".stickynav", /* selector name of the html element, that you want to stick */
   stickTo: 0, /* top offset of the position */
-  scrollTowards: "down" /* in which scroll evernt will trigger to stick the element. Possible 3 values are - 'down', 'up' and 'none' */
+  scrollTowards: "down" /* in which scroll event will trigger to stick the element. Possible 3 values are - 'down', 'up' and 'none' */
 });
 ```
 
