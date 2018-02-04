@@ -46,12 +46,16 @@
             <p>This simple example will show how 'Sticky Element' script can be use to make a fixed top navigation bar with an to offset and the sticky effect will only appear when scrolling down.</p>
             <pre class="code">
 let topMenuBar = new StickyElement({
-    element: ".stickynav", /* selector name of the html element, that you want to stick */
-    stickTo: 0, /* top offset of the position */
-    scrollTowards: "down" /* in which scroll event will trigger to stick the element.
-                          Possible 3 values are - 'down', 'up' and 'none' */
+    element: ".stickynav",
+    stickTo: 0,
+    scrollTowards: "down"
 });
             </pre>
+            <ul>
+                <li>'element' is the selector name of the html element</li>
+                <li>'stickTo' is the top offset of the position</li>
+                <li>'scrollTowards' which scroll movement will trgger to stick the element. Values can one of these three "none", "down" and "up".</li>
+            </ul>
         </main>
 
         <footer>
@@ -59,11 +63,11 @@ let topMenuBar = new StickyElement({
         </footer>
 
         <script type="text/javascript">
-let topMenuBar = new StickyElement({
-    element: ".stickynav", /* selector name of the html element, that you want to stick */
-    stickTo: 0, /* top offset of the position */
-    scrollTowards: "down" /* in which scroll event will trigger to stick the element. Possible 3 values are - 'down', 'up' and 'none' */
-});
+            let topMenuBar = new StickyElement({
+                element: ".stickynav",
+                stickTo: 0,
+                scrollTowards: "down"
+            });
         </script>
     </body>
 </html>
