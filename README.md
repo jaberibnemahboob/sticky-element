@@ -16,11 +16,11 @@ let topMenuBar = new StickyElement({
   scrollTowards: "none"
 });
 ```
-> 'element' is the selector name of the html element
+`1. 'element' is the selector name of the html element`
 
-> 'stickTo' is the top offset of the position
+`2. 'stickTo' is the top offset of the position`
 
-> 'scrollTowards' which scroll movement will trgger to stick the element. Values can one of these three "none", "down" and "up"
+`3. 'scrollTowards' which scroll movement will trgger to stick the element. Values can one of these three "none", "down" and "up"`
 
 
 ## Example 2
