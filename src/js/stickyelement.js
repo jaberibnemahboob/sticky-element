@@ -67,35 +67,35 @@ let StickyElement = function(){
                 if((window.pageYOffset >= scrollPos) && (scrollCond == 1)){
                     if(window.pageYOffset >= elemPos){
                         elem.style.position = "fixed";
-                        elem.style.left = targetPosX;
-                        elem.style.top = targetPosY;
+                        elem.style.left = targetPosX + "px";
+                        elem.style.top = targetPosY + "px";
                     }
                 }else if((window.pageYOffset < scrollPos) && (scrollCond == 1)){
                     if(window.pageYOffset < elemPos) {
                         elem.style.position = preState;
-                        elem.style.left = prePosX;
-                        elem.style.top = prePosY;
+                        elem.style.left = prePosX + "px";
+                        elem.style.top = prePosY + "px";
                     }
                 }else if((window.pageYOffset <= scrollPos) && (scrollCond == -1)){
                     if(window.pageYOffset <= elemPos) {
                         elem.style.position = "fixed";
-                        elem.style.left = targetPosX;
-                        elem.style.top = targetPosY;
+                        elem.style.left = targetPosX + "px";
+                        elem.style.top = targetPosY + "px";
                     }
                 }else if((window.pageYOffset > scrollPos) && (scrollCond == -1)){
                     if(window.pageYOffset > elemPos) {
                         elem.style.position = preState;
-                        elem.style.left = prePosX;
-                        elem.style.top = prePosY;
+                        elem.style.left = prePosX + "px";
+                        elem.style.top = prePosY + "px";
                     }
                 }else if(scrollCond == 0){
                     elem.style.position = "fixed";
-                    elem.style.left = targetPosX;
-                    elem.style.top = targetPosY;
+                    elem.style.left = targetPosX + "px";
+                    elem.style.top = targetPosY + "px";
                 }else{
                     elem.style.position = preState;
-                    elem.style.left = prePosX;
-                    elem.style.top = prePosY;
+                    elem.style.left = prePosX + "px";
+                    elem.style.top = prePosY + "px";
                 }
                 scrollPos = window.pageYOffset;
             }
