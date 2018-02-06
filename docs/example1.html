@@ -4,9 +4,7 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-
-        <!-- INSTALLING 'Sticky Element' -->
-        <script src="dist/js/stickyelement.min.js"></script>
+        <script src="../dist/js/stickyelement.min.js"></script>
 
         <title>Example 1</title>
 
@@ -16,9 +14,10 @@
             header{background: #DEDEDE; min-height: 80px; width: 100%;}
             nav{display: flex; flex-wrap: nowrap; justify-content: space-between; width: 100%; max-width: 1000px; margin: 0 auto;}
             nav a, nav a:hover{color: darkcyan; text-decoration: none; font-weight: bold; font-size: 1.3em; line-height: 80px;}
-            main{min-height: 1000px; padding-top: 100px; width: 100%; max-width: 1000px; margin: 0 auto;}
+            main{height: 1000px; padding-top: 100px; width: 100%; max-width: 1000px; margin: 0 auto;}
             p{padding-bottom: 0.5em;}
             pre.code{padding: 1em; background: #EFEFEF; border-left: 2px solid darkcyan;}
+            .box{border: 200px solid transparent;}
         </style>
 
     </head>
@@ -38,15 +37,17 @@
             <pre class="code">
 let topMenuBar = new StickyElement({
     element: ".stickynav",
-    stickTo: 0,
+    stickToX: 0,
+    stickToY: 0,
     scrollTowards: "none"
 });
             </pre>
             <ul>
                 <li>'element' is the selector name of the html element</li>
-                <li>'stickTo' is the top offset of the position</li>
+                <li>'stickToY' is the top offset of the position</li>
                 <li>'scrollTowards' which scroll movement will trgger to stick the element. Values can one of these three "none", "down" and "up".</li>
             </ul>
+            <div class="box">&nbsp;</div>
         </main>
 
         <footer>
@@ -55,9 +56,10 @@ let topMenuBar = new StickyElement({
 
         <script type="text/javascript">
             let topMenuBar = new StickyElement({
-            element: ".stickynav", /* selector name of the html element, that you want to stick */
-            stickTo: 0, /* top offset of the position */
-            scrollTowards: "none" /* in which scroll event will trigger to stick the element. Possible 3 values are - 'down', 'up' and 'none' */
+                element: ".stickynav",
+                stickToX: 0,
+                stickToY: 0,
+                scrollTowards: "none"
             });
         </script>
     </body>
