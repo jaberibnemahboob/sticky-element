@@ -1,10 +1,9 @@
 /*!
- * sticky-element v1.0.0: Stick Element to position
+ * sticky-element v1.1: Stick Element to position
  * (c) 2018 Jaber Ibne Mahboob
  * MIT License
  * http://github.com/jaberibnemahboob/sticky-element
  */
-
 let StickyElement = function(){
     //ALLOCATE VARIABLE
     let i;
