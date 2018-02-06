@@ -18,6 +18,14 @@ let StickyElement = function(){
         //CHECK WHETHER OBJECT IS VALID
         if(!("element" in object) || (typeof object["element"] !== "string") || (document.querySelector(object["element"]) === null)) return;
 
+        //GET LEFT SCROLL OFFSET OF THE TARGET ELEMENT
+        let leftScrollOffset = function(e){
+            let xPos = 0;
+            do{xPos += e.offsetLeft;} while(e = e.offsetParent);
+            xPos = Math.max(xPos, 0);
+            return xPos;
+        };
+
         //GET TOP SCROLL OFFSET OF THE TARGET ELEMENT
         let topScrollOffset = function(e){
             let yPos = 0;
@@ -41,13 +49,15 @@ let StickyElement = function(){
         elems.forEach(function(elem,index){
 
             //PREPARE ALL VARIABLES
-            let targetPos = ("stickToY" in object) ? Math.max(parseInt(object["stickToY"]),0) : topScrollOffset(elem);
+            let targetPosX = ("stickToX" in object) ? Math.max(parseInt(object["stickToX"]),0) : leftScrollOffset(elem);
+            let targetPosY = ("stickToY" in object) ? Math.max(parseInt(object["stickToY"]),0) : topScrollOffset(elem);
             let elemPos = topScrollOffset(elem);
             let scrollCondStr = ("scrollTowards" in object) ? object["scrollTowards"] : "none";
             let scrollCond = (scrollCondStr == "down") ? 1 : ((scrollCondStr == "up") ? -1 : 0);
             let scrollPos = 0;
             let preState = elem.style.position;
-            let prePos = elem.style.top;
+            let prePosX = elem.style.left;
+            let prePosY = elem.style.top;
             let elemParent = elem.parentNode;
 
 
@@ -57,29 +67,35 @@ let StickyElement = function(){
                 if((window.pageYOffset >= scrollPos) && (scrollCond == 1)){
                     if(window.pageYOffset >= elemPos){
                         elem.style.position = "fixed";
-                        elem.style.top = targetPos;
+                        elem.style.left = targetPosX;
+                        elem.style.top = targetPosY;
                     }
                 }else if((window.pageYOffset < scrollPos) && (scrollCond == 1)){
                     if(window.pageYOffset < elemPos) {
                         elem.style.position = preState;
-                        elem.style.top = prePos;
+                        elem.style.left = prePosX;
+                        elem.style.top = prePosY;
                     }
                 }else if((window.pageYOffset <= scrollPos) && (scrollCond == -1)){
                     if(window.pageYOffset <= elemPos) {
                         elem.style.position = "fixed";
-                        elem.style.top = targetPos;
+                        elem.style.left = targetPosX;
+                        elem.style.top = targetPosY;
                     }
                 }else if((window.pageYOffset > scrollPos) && (scrollCond == -1)){
                     if(window.pageYOffset > elemPos) {
                         elem.style.position = preState;
-                        elem.style.top = prePos;
+                        elem.style.left = prePosX;
+                        elem.style.top = prePosY;
                     }
                 }else if(scrollCond == 0){
                     elem.style.position = "fixed";
-                    elem.style.top = targetPos;
+                    elem.style.left = targetPosX;
+                    elem.style.top = targetPosY;
                 }else{
                     elem.style.position = preState;
-                    elem.style.top = prePos;
+                    elem.style.left = prePosX;
+                    elem.style.top = prePosY;
                 }
                 scrollPos = window.pageYOffset;
             }

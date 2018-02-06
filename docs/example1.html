@@ -4,7 +4,7 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-        <script src="../dist/js/stickyelement.min.js"></script>
+        <script src="../dist/js/stickyelement.js"></script>
 
         <title>Example 1</title>
 
@@ -37,6 +37,7 @@
             <pre class="code">
 let topMenuBar = new StickyElement({
     element: ".stickynav",
+    stickToX: 0,
     stickToY: 0,
     scrollTowards: "none"
 });
@@ -56,6 +57,7 @@ let topMenuBar = new StickyElement({
         <script type="text/javascript">
             let topMenuBar = new StickyElement({
                 element: ".stickynav",
+                stickToX: 0,
                 stickToY: 0,
                 scrollTowards: "none"
             });
