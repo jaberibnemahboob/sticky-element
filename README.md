@@ -25,7 +25,6 @@ let topMenuBar = new StickyElement({
 
 `4. 'scrollTowards' which scroll movement will trgger to stick the element. Values can one of these three "none", "down" and "up"`
 
-
 ## Example 2
 If a menu bar normally has a static position with having an offset from top of the window, and you want to stick it to the top while scrolling down. Then follow the code below. Visit to check online [here](https://jaberibnemahboob.github.io/sticky-element/example2.html). 
 ```
